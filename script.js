@@ -127,3 +127,31 @@ class WordleGame {
 
 // Initialize game
 const game = new WordleGame();
+
+// Keyboard event handling
+document.addEventListener('keydown', (event) => {
+    const key = event.key.toUpperCase();
+    
+    if (key >= 'A' && key <= 'Z' && key.length === 1) {
+        game.addLetter(key);
+    } else if (key === 'ENTER') {
+        game.submitGuess();
+    } else if (key === 'BACKSPACE') {
+        game.deleteLetter();
+    }
+});
+
+// On-screen keyboard handling
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('key')) {
+        const key = event.target.textContent;
+        
+        if (key === 'ENTER') {
+            game.submitGuess();
+        } else if (key === '⌫') {
+            game.deleteLetter();
+        } else if (key.length === 1 && key >= 'A' && key <= 'Z') {
+            game.addLetter(key);
+        }
+    }
+});
