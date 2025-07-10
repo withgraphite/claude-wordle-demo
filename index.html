@@ -96,6 +96,33 @@
                 </div>
             </div>
         </main>
+        
+        <!-- Game Over Modal -->
+        <div id="game-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title"></h2>
+                <p id="modal-message"></p>
+                <div id="modal-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="games-played">0</div>
+                        <div class="stat-label">Played</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="win-percentage">0</div>
+                        <div class="stat-label">Win %</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="current-streak">0</div>
+                        <div class="stat-label">Current Streak</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="max-streak">0</div>
+                        <div class="stat-label">Max Streak</div>
+                    </div>
+                </div>
+                <button id="play-again-btn" class="modal-button">Play Again</button>
+            </div>
+        </div>
     </div>
     
     <script src="script.js"></script>
