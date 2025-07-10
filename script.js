@@ -91,15 +91,20 @@ class WordleGame {
             }
         }
         
-        // Apply results to tiles
+        // Apply results to tiles with staggered animation
         for (let i = 0; i < this.wordLength; i++) {
             const tileIndex = this.getTileIndex(this.currentRow, i);
             const tile = this.tiles[tileIndex];
-            tile.classList.add(result[i]);
+            
+            setTimeout(() => {
+                tile.classList.add(result[i]);
+            }, i * 100);
         }
         
-        // Update keyboard colors
-        this.updateKeyboardColors(guess, result);
+        // Update keyboard colors after animations complete
+        setTimeout(() => {
+            this.updateKeyboardColors(guess, result);
+        }, this.wordLength * 100 + 300);
     }
     
     updateKeyboardColors(guess, result) {
